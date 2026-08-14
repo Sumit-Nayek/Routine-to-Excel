@@ -128,24 +128,26 @@
 #             st.error(f"Error parsing file: {e}")
 import os
 import json
-import base64
 from io import BytesIO
 import streamlit as st
 import pandas as pd
 from pypdf import PdfReader
-import requests
+from huggingface_hub import InferenceClient
 
 # Page setup
 st.set_page_config(page_title="Routine to Excel", page_icon="📅", layout="centered")
 st.title("📅 Student Routine to Excel Converter")
-st.write("Upload your exam/class schedule (PDF or Image) to convert it into a structured Excel file.")
+st.write("Upload your exam/class schedule (PDF) to convert it into a structured Excel file.")
 
 # 1. Retrieve Hugging Face Token securely
 HF_TOKEN = os.getenv("HF_TOKEN")
 
 if not HF_TOKEN:
-    st.error("HF_TOKEN not detected in environment variables. Please check your setup.")
+    st.error("HF_TOKEN not detected in environment variables. Please run: export HF_TOKEN='your_token'")
     st.stop()
+
+# Initialize the HF Inference Client
+client = InferenceClient(api_key=HF_TOKEN)
 
 # 2. Helper function: Extract text from PDF
 def extract_text_from_pdf(uploaded_file):
@@ -157,49 +159,37 @@ def extract_text_from_pdf(uploaded_file):
             extracted_text += text + "\n"
     return extracted_text
 
-# 3. Helper function: Call Hugging Face Serverless Inference
+# 3. Helper function: Call Hugging Face API
 def parse_schedule_with_hf(content_text):
-    # Free OpenAI-compatible router endpoint provided by Hugging Face
-    url = "https://router.huggingface.co/together/v1/chat/completions"
-    headers = {
-        "Authorization": f"Bearer {HF_TOKEN}",
-        "Content-Type": "application/json"
-    }
-
     system_prompt = (
-        "You are an expert data parser. Your task is to extract timetable/schedule information. "
+        "You are an expert data parser. Extract the timetable/schedule information into a structured table. "
         "Return ONLY a valid JSON array of objects. "
-        "Each object must have these exact keys: 'Date', 'Day', 'Time', 'Subject', 'Room'. "
+        "Each object must contain these exact keys: 'Date', 'Day', 'Time', 'Subject', 'Room'. "
         "If a field is missing, set its value to 'N/A'. "
-        "Do not include any Markdown ticks or introductory/concluding text. Only output raw JSON."
+        "Do not include any Markdown ticks (no ```json or ```) or conversational text. Output raw JSON only."
     )
 
-    # Qwen 2.5 72B is free, fast, and excellent at structured JSON formatting
-    payload = {
-        "model": "Qwen/Qwen2.5-72B-Instruct",
-        "messages": [
+    # Use a widely supported free serverless instruct model
+    response = client.chat.completions.create(
+        model="meta-llama/Llama-3.2-3B-Instruct",
+        messages=[
             {"role": "system", "content": system_prompt},
-            {"role": "user", "content": f"Extract the schedule details from this text:\n\n{content_text}"}
+            {"role": "user", "content": f"Extract schedule details from this text:\n\n{content_text}"}
         ],
-        "temperature": 0.1,
-        "max_tokens": 2048
-    }
+        max_tokens=2048,
+        temperature=0.1
+    )
 
-    response = requests.post(url, headers=headers, json=payload)
-    
-    if response.status_code != 200:
-        raise Exception(f"API Error ({response.status_code}): {response.text}")
-        
-    raw_content = response.json()["choices"][0]["message"]["content"].strip()
-    
-    # Strip accidental markdown codeblocks (e.g. ```json ... ```)
+    raw_content = response.choices[0].message.content.strip()
+
+    # Clean any leftover markdown blocks
     if raw_content.startswith("```"):
         raw_content = raw_content.strip("`").replace("json", "").strip()
-        
+
     return json.loads(raw_content)
 
 # 4. Streamlit UI
-uploaded_file = st.file_uploader("Upload Routine (PDF only for free text model)", type=["pdf"])
+uploaded_file = st.file_uploader("Upload Routine (PDF)", type=["pdf"])
 
 if uploaded_file and st.button("Convert to Excel"):
     with st.spinner("Analyzing schedule and generating table..."):
@@ -207,7 +197,7 @@ if uploaded_file and st.button("Convert to Excel"):
             extracted_text = extract_text_from_pdf(uploaded_file)
             
             if not extracted_text.strip():
-                st.error("No readable text found in this PDF. Please ensure it is a digital PDF.")
+                st.error("No readable text found in this PDF. Please ensure it is a digital (selectable text) PDF.")
                 st.stop()
 
             # Parse with Hugging Face
