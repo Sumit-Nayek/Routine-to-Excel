@@ -1,3 +1,12 @@
+# Virtual environment
+venv/
+
+# Streamlit secrets (Do NOT commit this to Git)
 .streamlit/
+
+# Python cache & temporary build files
 __pycache__/
+*.pyc
+
+# Excel test outputs
 *.xlsx
