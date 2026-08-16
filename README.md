@@ -1,13 +1,6 @@
 ## Routine-to-Excel
 Transform your academic timetable into a structured, actionable Excel sheet in seconds. This project automates the tedious, manual process of copying class schedules, freeing up valuable time for what truly matters in the new era of education.
-flowchart LR
-    A[Input: Raw Timetable Data] --> B(Parsing Engine);
-    B --> C{Data Validation};
-    C -->|Invalid| D[Error Handling / Prompt];
-    D --> A;
-    C -->|Valid| E[Excel Generator];
-    E --> F[Apply Styling & Formatting];
-    F --> G[Output: .xlsx File];
+
 ### 🚀 Why This Matters: The NEP 2020 Connection
 India's National Education Policy (NEP) 2020 isn't just a policy; it's a paradigm shift. It envisions an education system that is multidisciplinary, flexible, experiential, and deeply integrated with technology . The core of this transformation rests on giving students and educators more control over their learning paths and administrative burdens.
 
