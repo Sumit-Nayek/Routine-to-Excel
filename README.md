@@ -1,6 +1,5 @@
-# 📅 Routine-to-Excel
+<img width="1408" height="768" alt="Gemini_Generated_Image_warbnqwarbnqwarb" src="https://github.com/user-attachments/assets/00e4ae7b-4347-4ef5-b81b-0331ca45dda8" />
 
-> Transform chaotic, unstructured timetables into clean, automated Excel spreadsheets in seconds.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
@@ -15,6 +14,7 @@
 By bridging the gap between static schedule documents and dynamic digital planning, this project eliminates hours of tedious manual data entry for students, educators, and working professionals.
 
 ---
+
 
 ## 🌍 Societal & Community Impact
 
