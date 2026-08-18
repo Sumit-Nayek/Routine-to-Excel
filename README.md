@@ -9,7 +9,7 @@
 
 ## 🌟 Overview
 
-This is an open-source tool designed to parse unstructured schedule data—such as university timetables, shift schedules, or PDF routines—and convert them directly into structured, machine-readable Microsoft Excel (`.xlsx`) files. 
+This is an open-source tool designed to parse unstructured schedule data—such as university timetables, shift schedules, or PDF routines and convert them directly into structured, machine-readable Microsoft Excel (`.xlsx`) files. 
 
 By bridging the gap between static schedule documents and dynamic digital planning, this project eliminates hours of tedious manual data entry for students, educators, and working professionals.
 
@@ -18,7 +18,7 @@ By bridging the gap between static schedule documents and dynamic digital planni
 
 ## 🌍 Societal & Community Impact
 
-Manual routine conversion is a universal bottleneck in academic institutions and workplaces, especially in developing regions or underfunded schools that lack expensive enterprise scheduling software. **Routine-to-Excel** drives tangible social impact across four main pillars:
+Manual routine conversion is a universal bottleneck in academic institutions and workplaces, especially in developing regions or underfunded schools that lack expensive enterprise scheduling software. This drives tangible social impact across four main pillars:
 
 * **🎓 Academic Empowerment & Equity:** Students often receive cluttered PDF or image-based class routines at the start of every term. Converting these into Excel allows students to integrate schedules into digital calendars (Google Calendar, Outlook), set study reminders, and improve personal time management—leveling the digital utility playing field for all learners.
 * **⏰ Rescuing Educator & Administrator Time:** Teachers and academic coordinators spend dozens of hours every semester manually re-keying institutional timetables into spreadsheet formats for record-keeping. Automating this frees up critical hours that can be redirected toward teaching, research, and student mentorship.
@@ -39,7 +39,7 @@ Try out the web application instantly without installing anything locally:
 
 India's **National Education Policy (NEP) 2020** isn't just a policy; it's a paradigm shift. It envisions an education system that is **multidisciplinary, flexible, experiential, and deeply integrated with technology**. The core of this transformation rests on giving students and educators more control over their learning paths while eliminating administrative burdens.
 
-This tool is a small but powerful step toward that vision. Here is how **Routine-to-Excel** directly aligns with and accelerates key NEP 2020 goals:
+This tool is a small but powerful step toward that vision. Here is how this work directly aligns with and accelerates key NEP 2020 goals:
 
 ### 1. Powering the "Digital First" & Tech-Integrated Ecosystem
 NEP 2020 heavily emphasizes digital learning and technology integration to enhance educational access and quality, complementing national digital infrastructures like **DIKSHA** and **PM eVidya**.
