@@ -9,7 +9,7 @@
 
 ## 🌟 Overview
 
-**Routine-to-Excel** is an open-source tool designed to parse unstructured schedule data—such as university timetables, shift schedules, or PDF routines—and convert them directly into structured, machine-readable Microsoft Excel (`.xlsx`) files. 
+This is an open-source tool designed to parse unstructured schedule data—such as university timetables, shift schedules, or PDF routines—and convert them directly into structured, machine-readable Microsoft Excel (`.xlsx`) files. 
 
 By bridging the gap between static schedule documents and dynamic digital planning, this project eliminates hours of tedious manual data entry for students, educators, and working professionals.
 
