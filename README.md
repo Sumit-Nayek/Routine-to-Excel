@@ -9,7 +9,7 @@
 
 ## 🌟 Overview
 
-This is an open-source tool designed to parse unstructured schedule data—such as university timetables, shift schedules, or PDF routines and convert them directly into structured, machine-readable Microsoft Excel (`.xlsx`) files. 
+This is an open-source tool designed to parse unstructured schedule data such as university timetables, shift schedules, or PDF routines and convert them directly into structured, machine-readable Microsoft Excel (`.xlsx`) files. 
 
 By bridging the gap between static schedule documents and dynamic digital planning, this project eliminates hours of tedious manual data entry for students, educators, and working professionals.
 
@@ -44,14 +44,14 @@ This tool is a small but powerful step toward that vision. Here is how this work
 ### 1. Powering the "Digital First" & Tech-Integrated Ecosystem
 NEP 2020 heavily emphasizes digital learning and technology integration to enhance educational access and quality, complementing national digital infrastructures like **DIKSHA** and **PM eVidya**.
 * **Automates Core Administrative Tasks:** A practical demonstration of how small automation scripts eliminate manual data entry and minimize human error.
-* **Generates Machine-Readable Data:** Converting unstructured routines into formatted Excel sheets makes the data ripe for downstream analysis, calendar integration, and custom visualizations.
+* **Generates Machine Readable Data:** Converting unstructured routines into formatted Excel sheets makes the data ripe for downstream analysis, calendar integration, and custom visualizations.
 
 ### 2. Fostering Experiential, Skill-Based, and Applied Learning
 The policy moves away from rote memorization in favor of experiential learning and hands-on problem-solving. This project serves as a real-world tool for both students and teachers:
 * **Personalized Time Management:** Students can analyze their generated schedules to categorize subjects, track contact hours, and build effective study plans.
 * **Applied Python Learning:** For computer science learners, the project offers a tangible open-source codebase showing how programming solves everyday operational challenges.
 
-### 3. Bridging the Rural-Urban Divide Through Accessible Tech
+### 3. Bridging the Rural Urban Divide Through Accessible Tech
 NEP 2020 aims to reduce educational disparities and ensure equitable access across urban and rural regions alike.
 * **Low-Barrier & Lightweight:** Designed as a lightweight, low-overhead solution that works smoothly on basic hardware and low-bandwidth connections, helping educators in remote schools organize schedules just as effectively as tier-1 institutions.
 
