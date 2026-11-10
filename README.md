@@ -47,7 +47,7 @@ NEP 2020 heavily emphasizes digital learning and technology integration to enhan
 * **Generates Machine Readable Data:** Converting unstructured routines into formatted Excel sheets makes the data ripe for downstream analysis, calendar integration, and custom visualizations.
 
 ### 2. Fostering Experiential, Skill-Based, and Applied Learning
-The policy moves away from rote memorization in favor of experiential learning and hands-on problem-solving. This project serves as a real-world tool for both students and teachers:
+The policy moves away from rote memorization in favor of experiential learning and hands-on problem solving. This project serves as a real-world tool for both students and teachers:
 * **Personalized Time Management:** Students can analyze their generated schedules to categorize subjects, track contact hours, and build effective study plans.
 * **Applied Python Learning:** For computer science learners, the project offers a tangible open-source codebase showing how programming solves everyday operational challenges.
 
@@ -78,7 +78,7 @@ NEP 2020 aims to reduce educational disparities and ensure equitable access acro
 
 * **⚡ One-Click Parsing:** Instantly extract schedule information from raw text or document formats into formatted Excel sheets.
 * **📊 Auto-Structured Columns:** Smartly categorizes entries by Day, Time Slot, Subject/Course Code, Room Number, and Instructor.
-* **🎨 Custom Cell Formatting:** Color-codes time slots or course types automatically for visual clarity.
+* **🎨 Custom Cell Formatting:** Color codes time slots or course types automatically for visual clarity.
 * **📅 Calendar Export Ready:** Converts data into a clean structure ready for direct export into CSV, iCal, or Google Calendar formats.
 * **🔓 Free & Open Source:** Built for the global developer and student community to use, adapt, and expand freely.
 
